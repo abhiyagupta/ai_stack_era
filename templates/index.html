@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select an Animal Or Upload a File</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .section {
+            width: 45%;
+        }
+        #animal-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        #error-log {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select an Animal and Upload a File</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>Select an Animal:</h2>
+            <select id="animal-select">
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+                <option value="elephant">Elephant</option>
+            </select>
+            <button onclick="showAnimalImage()">Show Image</button>
+            <div id="animal-image"></div>
+            <div id="error-log"></div>
+        </div>
+
+        <div class="section">
+            <h2>Upload a File:</h2>
+            <input type="file" id="file-input">
+            <button onclick="uploadFile()">Upload</button>
+            <div id="file-info"></div>
+        </div>
+    </div>
+
+    <script>
+        function showAnimalImage() {
+            const animal = document.getElementById('animal-select').value;
+            const errorLog = document.getElementById('error-log');
+            errorLog.innerHTML = ''; // Clear previous errors
+            
+            fetch('/get_animal_image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ animal: animal }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.image_url) {
+                    const img = new Image();
+                    img.onload = function() {
+                        document.getElementById('animal-image').innerHTML = '';
+                        document.getElementById('animal-image').appendChild(img);
+                    };
+                    img.onerror = function() {
+                        errorLog.innerHTML += `<p>Error loading image from URL: ${data.image_url}</p>`;
+                    };
+                    img.src = data.image_url;
+                    img.alt = animal;
+                    console.log("Attempting to load image from:", data.image_url);
+                } else {
+                    errorLog.innerHTML += '<p>No image URL received from server</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                errorLog.innerHTML += `<p>Error: ${error.message}</p>`;
+            });
+        }
+
+        
+        function uploadFile() {
+            const fileInput = document.getElementById('file-input');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file first.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/upload_file', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('file-info').innerHTML = `
+                    <p>File Name: ${data.file_name}</p>
+                    <p>File Size: ${data.file_size} bytes</p>
+                    <p>File Type: ${data.file_type}</p>
+                `;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html
