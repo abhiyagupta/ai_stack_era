@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Multi-Language Translator",
+  "version": "1.2",
+  "description": "Translate highlighted text to any language",
+  "permissions": ["contextMenus", "storage"],
+  "host_permissions": [
+    "https://translate.googleapis.com/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
