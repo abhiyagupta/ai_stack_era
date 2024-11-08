@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .upload-form {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        .audio-note {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Your File</h1>
+    <div class="upload-form">
+        <form method="post" enctype="multipart/form-data">
+            <p>Select a file to upload (Supported formats: txt, png, jpg, jpeg, wav, mp3)</p>
+            <input type="file" name="file" accept=".txt,.png,.jpg,.jpeg,.wav,.mp3">
+            <input type="submit" value="Upload">
+        </form>
+        <p class="audio-note">Note: Audio files must be less than 1 minute long. Audio will be slowed down by 1.5x during processing.</p>
+    </div>
+</body>
+</html> 

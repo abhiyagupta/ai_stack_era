@@ -1,0 +1,4 @@
+- activate virtaul environment : python -m venv venv
+- active : venv/3_image_txt_audio/activate
+- install flask : pip install flask
+- run : python app.py 
