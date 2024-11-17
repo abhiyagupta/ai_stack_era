@@ -3,7 +3,7 @@
 venv/
 data/
 /data*
-data/MNIST/raw/*
+data/MNIST/raw/*.gz
 *.zip
 
 data/MNIST/raw/t10k-images-idx3-ubyte
