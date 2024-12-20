@@ -1,9 +1,9 @@
 ## ASK: 
--mnist dataset - achive accuracy of 99.4% in less then 20K parameters
--less than 20 epochs
--use batch normailization and drop out
--fully connected layer
--github actions
+- mnist dataset - achive accuracy of 99.4% in less then 20K parameters
+- less than 20 epochs
+- use batch normailization and drop out
+- fully connected layer
+- github actions
 
 
 
@@ -23,11 +23,11 @@
 
 ## DETAILS OF PROCESS: created different py files for:
 
--model architecture (here tried various optins to get to total params of less then 20,000)
--used model_6_red_param : where final params are 15,790 
--during training **BEST MODEL** (where acc is max) is saved. this best model is used for predictions. 
--creted preprocessing py file. here split dataset into train/test or validation/inference
--inference set was created without lables and used for final inference or predictions.
--inference uses randon 10 images from inference dataset and predictiosn are saved in inference_results folder
--created a github workflow to train and get inference.
--artifacts saved 
+- model architecture (here tried various optins to get to total params of less then 20,000)
+- used model_6_red_param : where final params are 15,790 
+- during training **BEST MODEL** (where acc is max) is saved. this best model is used for predictions. 
+- creted preprocessing py file. here split dataset into train/test or validation/inference
+- inference set was created without lables and used for final inference or predictions.
+- inference uses randon 10 images from inference dataset and predictiosn are saved in inference_results folder
+- created a github workflow to train and get inference.
+- artifacts saved 
