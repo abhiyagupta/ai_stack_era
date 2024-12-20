@@ -2,8 +2,8 @@ name: ML Training and Inference
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: [ "sess_06_mnist" ]
+  push:
+    branches: [ "sess_06_mnist" ]
 
 jobs:
   train-and-infer:
