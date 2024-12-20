@@ -1,0 +1,7 @@
+*.pt
+data/
+*.env
+models/
+__pycache__/
+venv/
+.data/MNIST/raw

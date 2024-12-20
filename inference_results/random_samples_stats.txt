@@ -1,0 +1,13 @@
+Random Samples Inference Statistics
+================================
+
+Sample 0: Predicted 0 with confidence 99.99%
+Sample 1: Predicted 2 with confidence 99.94%
+Sample 2: Predicted 9 with confidence 99.28%
+Sample 3: Predicted 4 with confidence 99.21%
+Sample 4: Predicted 0 with confidence 99.96%
+Sample 5: Predicted 8 with confidence 99.92%
+Sample 6: Predicted 9 with confidence 99.74%
+Sample 7: Predicted 8 with confidence 97.85%
+Sample 8: Predicted 2 with confidence 99.88%
+Sample 9: Predicted 0 with confidence 94.29%
