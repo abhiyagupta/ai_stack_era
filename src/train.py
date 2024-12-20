@@ -30,7 +30,7 @@ def main():
     lr = 0.01
     momentum = 0.9       #0.5
     weight_decay = 1e-4
-    epochs = 2 
+    epochs = 2   #20 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     save_dir = "./models"
     os.makedirs(save_dir, exist_ok=True)
