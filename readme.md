@@ -30,4 +30,14 @@
 - inference set was created without lables and used for final inference or predictions.
 - inference uses randon 10 images from inference dataset and predictiosn are saved in inference_results folder
 - created a github workflow to train and get inference.
-- artifacts saved 
+- artifacts saved
+
+## GITHUB ACTIONS:
+![image](https://github.com/user-attachments/assets/a1a9b5de-2a82-4c7f-98ca-2c49b26ce417)
+
+![image](https://github.com/user-attachments/assets/21e6d00f-485c-42e9-b802-d6abc9eee380)
+
+
+
+
+
