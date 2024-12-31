@@ -1,0 +1,29 @@
+data:
+  data_dir: "./Imagenet"
+  num_workers: 12
+  batch_size: 256
+  num_classes: 1000
+
+model:
+  learning_rate: 0.1
+  momentum: 0.9
+  weight_decay: 1e-4
+
+training:
+  max_epochs: 100
+  seed: 42  # Added random seed
+
+
+s3:
+  bucket_name: "era-imagenet"           # Your S3 bucket name
+  region: "ap-south-1"               # AWS region (e.g., us-east-1)
+  checkpoint_prefix: "imagenet/checkpoints"  # S3 prefix for checkpoints
+  logs_prefix: "imagenet/logs"              # S3 prefix for logs
+  # Optional: If not using AWS credentials file
+  aws_access_key_id: ""    # Your AWS access key
+  aws_secret_access_key: "" # Your AWS secret key
+  
+  # # Original ImageNet dataset path
+  # dataset:
+  #   key: ""                # Path to ImageNet zip in S3
+  #   local_path: "imagenet-dataset/imagenet.zip"

@@ -1,0 +1,5 @@
+torch>=2.0.0
+torchvision>=0.15.0
+pytorch-lightning>=2.0.0
+boto3>=1.26.0
+pyyaml>=6.0.0
