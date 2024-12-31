@@ -14,6 +14,10 @@ Aim:
 - 1 epoch was taking 1 hour to run as single gpu max batch size of 256
 - trained for 24 epochs (time constraint) and achived an accuarcy of 58%
 - IDE used is VS code (windows) connected to ec2 via ssh 
+- Model uploaded to Hugging Face Spaces for trial
+- Link for Hugging Face:
+
+https://huggingface.co/spaces/Abhiya/From_Stethoscopes_to_Code
 
 
 # STEPS to set up project: 
@@ -64,11 +68,12 @@ sudo apt install unzip -y
 unzip Imagenet.zip
 ```
 
-# 5. Modify datasets: will need to modify the validation dataset in correct format first:
+## 5. Modify datasets: will need to modify the validation dataset in correct format first:
 ![alt text](assets/train_data_format.png)         
 
 ![alt text](assets/val_data_format.png)
 
+### run this below code to fix validation folder structure
 ```
 python validation_transform.py -d ./Imagenet/ILSVRC/Data/CLS-LOC/val -l ./Imagenet/LOC_val_solution.csv
 
@@ -110,15 +115,13 @@ python train.py
 - ![alt text](assets/prediction_5.png)    
 
 
-## 10. Suggestions: 
+## 10. Steps for future: 
 
 - train on g5dn 12 x large with multi gpu availablility to reduce training time
-- also more memory so can increase bacth size
+- also more memory so can increase batch size
 - mutli gpu is also added in code (in train.py)
 - try to run for more epochs to increase accuracy
 
 
-# 11. Hugging Face Space to test the current version:
 
-https://huggingface.co/spaces/Abhiya/From_Stethoscopes_to_Code
 
