@@ -5,9 +5,7 @@ __pycache__
 venv
 pawiki-latest.xml.bz2
 .gradio  
-*.txt 
 pa_corpus.txt
 pa_corpus_cleaned.txt
-*.txt
-/*.txt 
+
 
