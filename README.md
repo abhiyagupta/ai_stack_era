@@ -87,6 +87,10 @@ The sample size parameter in the tokenizer has been optimized to achieve the req
 
 For example:
 
--  Punjabi character like ਪ (U+0A2A) is represented as three bytes in UTF-8: b'\xe0\xa8\xb0'
+- Punjabi character like ਪ (U+0A2A) is represented as three bytes in UTF-8: b'\xe0\xa8\xb0'
 - Initially, these might be treated as separate tokens
 - As training progresses, the algorithm would likely merge these into a single token representing the full character
+- code actually doesn't directly handle Punjabi characters using regex or ASCII - it uses UTF-8 encoding instead.
+- The code converts Punjabi text into UTF-8 bytes using Python's built-in encode() method. When you encode Punjabi characters in UTF-8, each Punjabi character (like ਮ, ੈ, ਂ) gets converted into multiple bytes. Unlike ASCII which uses just 1 byte per character, Punjabi characters in UTF-8 typically use 3 bytes per character.
+- The 256 represents all possible single byte values (0-255). Every byte in UTF-8 encoding must be between 0-255
+- 
