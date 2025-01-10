@@ -60,9 +60,10 @@ The Gradio interface will start and be accessible at `http://localhost:7860`
 
 ## Deployment
 
-This app is also deployed to Hugging Face Spaces:
+This app is also deployed to Hugging Face Spaces: 
 
-## TO UPDATE LATER 
+https://huggingface.co/spaces/Abhiya/Punjabi_tokenizer
+
 
 ## Note
 
