@@ -46,6 +46,9 @@ python clean_corpus.py
 ![alt text](assets/size_before_after_training.png)
 
 
+
+
+
 ```
 python model.py
 ```
