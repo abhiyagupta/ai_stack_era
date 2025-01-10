@@ -42,7 +42,9 @@ python clean_corpus.py
 5. Make sure you have a Punjabi corpus file named `pa_corpus_cleaned.txt` in the root directory
 
 6. Testing the tokenizer model locally 
+
 ![alt text](assets/size_before_after_training.png)
+
 
 ```
 python model.py
